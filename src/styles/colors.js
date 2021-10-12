@@ -1,0 +1,10 @@
+export const erinWhite = '#F5F5F5'
+export const erinNoir = '#272727'
+export const erinBlack = '#404040'
+export const erinRed = '#CC433F'
+export const erinRose = '#AF8383'
+export const erinRoseGold = '#404040'
+
+export const erinBlack50 = '#40404080'
+export const erinBlack10 = '#4040401A'
+export const erinRoseGold10 = '#4040401A'
