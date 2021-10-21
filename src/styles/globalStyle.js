@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import { erinBlack, erinRed } from "./colors"
+import styled, { createGlobalStyle } from "styled-components"
+import { erinBlack, erinRed, erinRose } from "./colors"
 
 import Cabin from '../../static/fonts/Cabin/Cabin-Regular.ttf';
 import CabinItalic from '../../static/fonts/Cabin/Cabin-Italic.ttf';
@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     font-style: italic;
 }
 
+body {
+    margin: 0px;
+}
+
   h1,
   h2,
   h3,
@@ -29,7 +33,8 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6,
   p,
-  span {
+  span,
+  small {
     font-family: 'Cabin', sans-serif;
     color: ${erinBlack};
     font-weight: 400;
@@ -42,11 +47,39 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-      font-size: 60px;
+    font-size: 60px;
+    margin-bottom: 16px;
+
   }
 
   h2 {
     font-size: 40px;
-}
+  }
+
+  h3 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+
+  }
+
+  p {
+    font-size: 22px;
+    letter-spacing: 1px;
+
+  }
+
+  small {
+    font-size: 22px;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: ${erinRose}
+  }
 `
 export default GlobalStyle
+
+export const Tag = styled.span`
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: ${erinBlack};
+`

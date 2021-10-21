@@ -7,4 +7,4 @@ export const erinRoseGold = '#404040'
 
 export const erinBlack50 = '#40404080'
 export const erinBlack10 = '#4040401A'
-export const erinRoseGold10 = '#4040401A'
+export const erinRoseGold10 = '#AF83831A'

@@ -51,10 +51,9 @@ const blink = keyframes`
 `;
 
 export const ErinSVGDiv = styled.div`
-display:flex;
-justify-content: center;
-margin-top: 70px;
-margin-bottom: 30px;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 30px;
 
 
 #right_eye, #left_eye{
