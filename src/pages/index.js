@@ -14,7 +14,7 @@ const IndexPage = () => {
       <Hero/>
       <Portfolio/>
       <About/>
-      <Work/>
+      <Work jobs={[1, 2, 3, 4]}/>
       <Contact/>
     </Layout>
   )

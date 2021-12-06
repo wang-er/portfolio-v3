@@ -34,6 +34,7 @@ body {
   h5,
   h6,
   p,
+  li,
   span,
   small,
   a {
@@ -65,16 +66,17 @@ body {
 
   }
 
-  p {
+  p, li{
     font-size: 22px;
     letter-spacing: .5px;
-    padding: .75em 0 .25em;
+    padding: .35em 0 .75em;
 
     a::after {
       height: 2.5px;
       
     }
   }
+
 
   a {
     letter-spacing: inherit;
@@ -112,7 +114,7 @@ body {
     font-size: 22px;
     font-style: italic;
     letter-spacing: 1px;
-    color: ${erinRose}
+    color: ${erinRose};
   }
 `
 export default GlobalStyle
