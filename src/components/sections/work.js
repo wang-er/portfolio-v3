@@ -12,7 +12,6 @@ const SidebarItem = styled.div`
     background-color: transparent;
     display: flex;
     position: relative;
-    // left: ${props => (props.isActive ? `-4px`: "0")};
     align-items: center;
     padding: 15px;
     // border-left: ${props => (props.isActive ? `4px solid ${erinRed}`: "none")};
@@ -24,18 +23,6 @@ const SidebarItem = styled.div`
     &:hover {
         background-color: ${erinRoseGold10};
     }
-
-    
-    // ::before {
-    //     content:'';
-    //     position: absolute;
-    //     background-color: ${erinRed};
-    //     top: 0;
-    //     left: -4px;
-    //     width: 4px;
-    //     height: 100%;
-    // }
-    
 `
 
 const SidebarColumn = styled.div`
@@ -50,6 +37,7 @@ const SidebarColumn = styled.div`
     // padding: 7px 0px;
 `
 
+//TODO remember to change height
 const SidebarHighlight = styled.div`
     position: absolute;
     background-color: ${erinRed};
