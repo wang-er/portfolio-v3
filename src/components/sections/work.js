@@ -1,4 +1,5 @@
 import React from 'react'
+import { animated, useTransition } from 'react-spring'
 import styled from "styled-components";
 import { erinBlack, erinBlack10, erinRed, erinRoseGold10, erinWhite } from '../../styles/colors';
 
@@ -14,7 +15,6 @@ const SidebarItem = styled.div`
     position: relative;
     align-items: center;
     padding: 15px;
-    // border-left: ${props => (props.isActive ? `4px solid ${erinRed}`: "none")};
     p {
         color: ${props => (props.isActive ? erinRed: erinBlack)};
         padding: 0;
@@ -33,8 +33,6 @@ const SidebarColumn = styled.div`
     border-left: 4px solid ${erinBlack10};
     height: fit-content;
     position: relative;
-
-    // padding: 7px 0px;
 `
 
 //TODO remember to change height
@@ -51,8 +49,8 @@ const SidebarHighlight = styled.div`
 `
 
 
-const JobBlock = styled.div`
-    display: ${props => (props.hidden ? "none": 'flex')};
+const JobBlock = styled(animated.div)`
+    display: ${props => (props.hidden ? 'none': 'flex')};
     flex-direction: column;
     flex: 2 1 auto;
     margin-left: 30px;
@@ -66,8 +64,8 @@ const JobBlock = styled.div`
    }
 `
 
-const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, hidden }) => (
-    <JobBlock hidden={hidden}>
+const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, hidden, props }) => {
+    return <JobBlock style={props} hidden={hidden}>
         <h3>{role} at <a href={companyURL}>{companyName}</a></h3>
         <small>{startDate} – {endDate}</small>
         <ul>
@@ -76,11 +74,17 @@ const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bul
             })}
         </ul>
     </JobBlock>
-)
+}
 
 export const Work = ({ jobs }) => {
     const [currentJobIndex, setCurrentJobIndex] = React.useState(0);
-    
+
+    const transitions = useTransition(jobs[currentJobIndex], {
+        from: { opacity: 0, transform: 'translate3d(0,10%,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0,0%,0)' },
+        leave: { opacity: 0, transform: 'translate3d(0,-10%,0)' },
+      });
+
     return <>
         <h1><span>where</span> I've worked</h1>
         <WorkGrid>
@@ -94,18 +98,14 @@ export const Work = ({ jobs }) => {
             <SidebarHighlight position={currentJobIndex}/>
             </SidebarColumn>
 
-            {jobs.map(function (job, index) {
-                    return <JobDescription key={index} hidden={index !== currentJobIndex} role={`HCI Engineer ${index}`} companyName="MORSE Corp." companyURL="https://google.com" startDate="June 2020" endDate="Present"
-                    bullets={["Assist in designing and programming the architecture for multiple Android aerospace applications with a MVVM pattern",
-                        "Create and implement pixel perfect mockups for Android applications",
-                        "Perform design reviews with clients and key users from the Department of Defense"]} />
-                })}
-            {/* For each job, create a panel here, link it to id by key? visibility based on index boolean matches onClick */}
-{/* probably sohuld take in the single job object? parse inside */}
-            {/* <JobDescription hidden={false} role="HCI Engineer" companyName="MORSE Corp." companyURL="https://google.com" startDate="June 2020" endDate="Present"
-                bullets={["Assist in designing and programming the architecture for multiple Android aerospace applications with a MVVM pattern",
-                    "Create and implement pixel perfect mockups for Android applications",
-                    "Perform design reviews with clients and key users from the Department of Defense"]} /> */}
+                <div>
+                {transitions((props, item, key) => (
+                <JobDescription hidden={(item - 1) !== currentJobIndex} props={props} role={`HCI Engineer ${item}`} companyName="MORSE Corp." companyURL="https://google.com" startDate="June 2020" endDate="Present"
+                     bullets={["Assist in designing and programming the architecture for multiple Android aerospace applications with a MVVM pattern",
+                         "Create and implement pixel perfect mockups for Android applications",
+                         "Perform design reviews with clients and key users from the Department of Defense"]} />
+                ))}
+                </div>
         </WorkGrid>
     </>
 }
