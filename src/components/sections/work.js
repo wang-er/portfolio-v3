@@ -7,6 +7,7 @@ const WorkGrid = styled.div`
     margin-top: 1.5em;
     margin-bottom: 5em;
     display: flex;
+    position: relative;
 `
 
 const SidebarItem = styled.div`
@@ -28,7 +29,7 @@ const SidebarItem = styled.div`
 const SidebarColumn = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 1 1 40%;
+    flex-basis: 20%;
     gap: 15px;
     border-left: 4px solid ${erinBlack10};
     height: fit-content;
@@ -52,7 +53,7 @@ const SidebarHighlight = styled.div`
 const JobBlock = styled(animated.div)`
     display: ${props => (props.hidden ? 'none': 'flex')};
     flex-direction: column;
-    flex: 2 1 auto;
+    flex-basis: auto;
     margin-left: 30px;
 
    small {
@@ -80,9 +81,9 @@ export const Work = ({ jobs }) => {
     const [currentJobIndex, setCurrentJobIndex] = React.useState(0);
 
     const transitions = useTransition(jobs[currentJobIndex], {
-        from: { opacity: 0, transform: 'translate3d(0,10%,0)' },
-        enter: { opacity: 1, transform: 'translate3d(0,0%,0)' },
-        leave: { opacity: 0, transform: 'translate3d(0,-10%,0)' },
+        from: { opacity: 0, transform: 'translate3d(0,5%, 0)', position: 'absolute'},
+        enter: { opacity: 1, transform: 'translate3d(0,0%, 0)' },
+        leave: { opacity: 0,  transform: 'translate3d(0, -5%, 0)'},
       });
 
     return <>
