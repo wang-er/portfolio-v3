@@ -62,8 +62,13 @@ body {
   h3 {
     font-size: 32px;
     margin-bottom: 8px;
-    letter-spacing: 1px;
+    letter-spacing: 1px; 
 
+    a {
+      ::after {
+        height: 3px;
+      }
+    }
   }
 
   p, li{
@@ -72,7 +77,7 @@ body {
     padding: .35em 0 .75em;
 
     a::after {
-      height: 2.5px;
+      height: 0.1em;
       
     }
   }
@@ -96,7 +101,7 @@ body {
       bottom: 0;
       left: 0;
       width: 100%;
-      height: .1em;
+      height: 0.1em;
       background-color: ${erinRed};
       transition: all 0.15s ease;
       opacity 1;

@@ -6,6 +6,7 @@ import { Portfolio } from "../components/sections/portfolio"
 import { About } from "../components/sections/about"
 import { Contact } from "../components/sections/contact"
 import { Work } from "../components/sections/work"
+import "../styles/typography.css"
 
 // markup
 const IndexPage = () => {
