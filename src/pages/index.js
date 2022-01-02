@@ -7,6 +7,7 @@ import { About } from "../components/sections/about"
 import { Contact } from "../components/sections/contact"
 import { Work } from "../components/sections/work"
 import "../styles/typography.css"
+import { Link } from "gatsby"
 
 // markup
 const IndexPage = () => {
@@ -15,7 +16,7 @@ const IndexPage = () => {
       <Hero/>
       <Portfolio/>
       <About/>
-      <Work jobs={[1, 2, 3, 4]}/>
+      <Work jobs={[1, 2, 3 ,4]}/>
       <Contact/>
     </Layout>
   )
