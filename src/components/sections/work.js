@@ -69,16 +69,11 @@ const JobBlock = styled(animated.div)`
    }
 `
 
-const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, hidden, props }) => {
+const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, props }) => {
     return <JobBlock style={props} hidden={hidden}>
         <h3>{role} at <a href={companyURL}>{companyName}</a></h3>
         <small>{startDate} – {endDate}</small>
-        {/* <ul> */}
         <div dangerouslySetInnerHTML={{ __html: bullets }} />
-            {/* {bullets.map(function (bullet, index) {
-                return <li key={`${role}_${startDate}_bullet_${index}`}>{bullet}</li>;
-            })} */}
-        {/* </ul> */}
     </JobBlock>
 }
 
@@ -109,8 +104,8 @@ export const Work = () => {
 
     const [currentJobIndex, setCurrentJobIndex] = React.useState(0);
     const transitions = useTransition(jobs[currentJobIndex], {
-        from: { opacity: 0, transform: 'translate3d(0,5%, 0)', display: 'flex'},
-        enter: { opacity: 1, transform: 'translate3d(0,0%, 0)' },
+        from: { opacity: 0, transform: 'translate3d(0, 5%, 0)', display: 'flex'},
+        enter: { opacity: 1, transform: 'translate3d(0, 0%, 0)'},
         leave: { opacity: 0,  transform: 'translate3d(0, -5%, 0)', display: 'none'},
       });
 
@@ -127,16 +122,13 @@ export const Work = () => {
                 })}
             <SidebarHighlight position={currentJobIndex}/>
             </SidebarColumn>
-
-                {/* <div> */}
                 {transitions(function (props, item, key, index) {
                     const { node } = item
                     const { frontmatter, html } = node;
                     const { role, url, company, startDate, endDate } = frontmatter;         
-                    return <JobDescription key={`job_${company}_${jobs.indexOf(item)}`} hidden={(key.ctrl.id - 1) !== currentJobIndex} props={props} role={role} companyName={company} companyURL={url} startDate={startDate} endDate={endDate}
+                    return <JobDescription key={`job_${company}_${jobs.indexOf(item)}`} props={props} role={role} companyName={company} companyURL={url} startDate={startDate} endDate={endDate}
                             bullets={html} />
                         })}
-                {/* </div> */}
         </WorkGrid>
     </>
 }
