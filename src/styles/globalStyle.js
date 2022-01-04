@@ -121,6 +121,42 @@ body {
     letter-spacing: 1px;
     color: ${erinRose};
   }
+
+
+  .flex {
+    display: flex;
+    background: orange;
+  }
+
+/* GALLERY ALL IMAGES SAME WIDTH */
+table {
+  width: 100%;
+  background: green;
+  table-layout: fixed;
+}
+
+
+.foo table  {
+    th:nth-of-type(2) {
+        width: 10%;
+    }
+    th:nth-of-type(2) {
+        width: 10%;
+    }
+    th:nth-of-type(3) {
+        width: 50%;
+    }
+     th:nth-of-type(4) {
+        width: 30%;
+    }
+}
+
+/* GALLERY 2 */
+
+
+
+
+
 `
 export default GlobalStyle
 

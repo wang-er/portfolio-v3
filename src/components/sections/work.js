@@ -70,7 +70,7 @@ const JobBlock = styled(animated.div)`
 `
 
 const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, props }) => {
-    return <JobBlock style={props} hidden={hidden}>
+    return <JobBlock style={props}>
         <h3>{role} at <a href={companyURL}>{companyName}</a></h3>
         <small>{startDate} – {endDate}</small>
         <div dangerouslySetInnerHTML={{ __html: bullets }} />
@@ -80,13 +80,13 @@ const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bul
 export const Work = () => {
     const jobsQuery = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
+      allMdx (
         filter: { fileAbsolutePath: { regex: "/jobs/" } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
           node {
-            html
+            body
             frontmatter {
               role
               company
@@ -100,7 +100,7 @@ export const Work = () => {
     }
   `);
 
-  const jobs = jobsQuery.allMarkdownRemark.edges;
+  const jobs = jobsQuery.allMdx.edges;
 
     const [currentJobIndex, setCurrentJobIndex] = React.useState(0);
     const transitions = useTransition(jobs[currentJobIndex], {

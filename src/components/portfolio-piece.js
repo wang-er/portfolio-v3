@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react'
 import styled from "styled-components";
-import { erinRed, erinBlack } from '../styles/colors';
+import { erinRed, erinBlack, erinWhite } from '../styles/colors';
 import { Tag } from '../styles/globalStyle';
 
 export const PortfolioBlock = styled(Link)`
@@ -10,7 +10,6 @@ export const PortfolioBlock = styled(Link)`
     flex-shrink: ${props => (props.size ? props.size : 1)};
     flex-grow: ${props => (props.size ? props.size : 1)};
     background-image: ${props => (props.image ? `url("${props.image}")` : "none")};
-    background-color: ${erinBlack}; 
     height: 240px;
     position: relative;
     transition: all 0.2s;
@@ -28,7 +27,7 @@ export const PortfolioHoverBlock = styled.div`
     height: 100%;
     box-sizing: border-box;
     opacity: 0;
-    background-color: ${erinRed}; 
+    background-color: ${erinWhite}; 
     background-clip: content-box;
     z-index: 100;
     position: absolute;
@@ -45,10 +44,10 @@ export const PortfolioPiece = ({ title, tags, previewImage, size, slug }) => {
     // const { title, tags, previewImage, size, ...rest } = props;
 
     return (
-        <PortfolioBlock image={previewImage} size={size} to="/blog/my-first-post/">
+        <PortfolioBlock image={previewImage} size={size} to="/blog/post-1/">
             <PortfolioHoverBlock>
                 <PortfolioDescription>
-                    <h3>{title}</h3>
+                    <h3 style={{color: erinRed}}>{title}</h3>
                     <div>
                         {tags.map(function (tag, index) {
                             return <Tag key={`${title}_tag_${index}`}>{(index ? ' / ' : '') + tag}</Tag>;

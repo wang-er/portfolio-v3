@@ -5,12 +5,11 @@ exports.createPages = ({ actions, graphql }) => {
   
     return graphql(`
       {
-        allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/markdown-pages/"}}) {
+        allMdx(filter: {fileAbsolutePath: {regex: "/markdown-pages/"}}) {
           edges {
             node {
-              frontmatter {
-                slug
-              }
+              id
+              slug
             }
           }
         }
@@ -20,13 +19,13 @@ exports.createPages = ({ actions, graphql }) => {
         return Promise.reject(result.errors)
       }
   
-      return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      return result.data.allMdx.edges.forEach(({ node }) => {
         createPage({
-          path: node.frontmatter.slug,
+          path: `/blog/${node.slug}`,
           component: blogPostTemplate,
           context: {
             // additional data can be passed via context
-            slug: node.frontmatter.slug,
+            id: node.id 
           },
         })
       })
