@@ -2477,7 +2477,9 @@ var plugins = [{
   options: {
     "plugins": [],
     "extensions": [".mdx", ".md"],
-    "defaultLayouts": {},
+    "defaultLayouts": {
+      "default": "/Users/erinwang/Documents/GitHub/portfolio-v3/src/components/layout.js"
+    },
     "gatsbyRemarkPlugins": [],
     "lessBabel": false,
     "remarkPlugins": [],

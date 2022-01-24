@@ -3,13 +3,14 @@ import { animated, useTransition } from 'react-spring'
 import styled from "styled-components";
 import { erinBlack, erinBlack10, erinRed, erinRoseGold10, erinWhite } from '../../styles/colors';
 import { graphql, useStaticQuery} from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const WorkGrid = styled.div`
     margin-top: 1.5em;
     margin-bottom: 5em;
     display: flex;
     position: relative;
-    min-height: 350px;
+    min-height: 500px;
 `
 
 const SidebarItem = styled.div`
@@ -73,7 +74,7 @@ const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bul
     return <JobBlock style={props}>
         <h3>{role} at <a href={companyURL}>{companyName}</a></h3>
         <small>{startDate} – {endDate}</small>
-        <div dangerouslySetInnerHTML={{ __html: bullets }} />
+        <MDXRenderer>{bullets}</MDXRenderer>
     </JobBlock>
 }
 
@@ -124,10 +125,10 @@ export const Work = () => {
             </SidebarColumn>
                 {transitions(function (props, item, key, index) {
                     const { node } = item
-                    const { frontmatter, html } = node;
+                    const { frontmatter, body } = node;
                     const { role, url, company, startDate, endDate } = frontmatter;         
                     return <JobDescription key={`job_${company}_${jobs.indexOf(item)}`} props={props} role={role} companyName={company} companyURL={url} startDate={startDate} endDate={endDate}
-                            bullets={html} />
+                            bullets={body} />
                         })}
         </WorkGrid>
     </>

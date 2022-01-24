@@ -29,16 +29,16 @@ export default function Template({
 }
 
 
-export const pageQuery = graphql`
-  query($id: String) {
-    mdx(id: { eq: $id }) {
-      html
-      id
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        slug
-        title
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query($id: String) {
+//     mdx(id: { eq: $id }) {
+//       html
+//       id
+//       frontmatter {
+//         date(formatString: "MMMM DD, YYYY")
+//         slug
+//         title
+//       }
+//     }
+//   }
+// `

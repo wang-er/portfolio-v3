@@ -44,7 +44,7 @@ export const PortfolioPiece = ({ title, tags, previewImage, size, slug }) => {
     // const { title, tags, previewImage, size, ...rest } = props;
 
     return (
-        <PortfolioBlock image={previewImage} size={size} to="/blog/post-1/">
+        <PortfolioBlock image={previewImage} size={size} to={slug}>
             <PortfolioHoverBlock>
                 <PortfolioDescription>
                     <h3 style={{color: erinRed}}>{title}</h3>
