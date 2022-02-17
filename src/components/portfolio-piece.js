@@ -6,9 +6,12 @@ import { Tag } from '../styles/globalStyle';
 
 export const PortfolioBlock = styled(Link)`
     display: flex;
-    flex-basis: 320px;
-    flex-shrink: ${props => (props.size ? props.size : 1)};
-    flex-grow: ${props => (props.size ? props.size : 1)};
+    // flex-basis: 320px;
+    flex-basis: ${props => (props.size ? `${props.size}%` : "50%")};
+    flex-shrink:  2;
+    flex-grow: 2;
+    // flex-shrink: ${props => (props.size ? props.size : 1)};
+    // flex-grow: ${props => (props.size ? props.size : 1)};
     background-image: ${props => (props.image ? `url("${props.image}")` : "none")};
     height: 240px;
     background-size: cover;

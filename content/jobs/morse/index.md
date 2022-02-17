@@ -1,7 +1,7 @@
 ---
 date: 2021-06-01
 role: HCI Engineer
-company: MORSE Crop.
+company: MORSE Corp.
 url: https://www.morsecorp.com/
 startDate: June 2021
 endDate: Present

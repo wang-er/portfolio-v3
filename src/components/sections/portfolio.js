@@ -6,7 +6,7 @@ import { graphql, useStaticQuery} from 'gatsby'
 
 const PortfolioGrid = styled.div`
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row-reverse wrap;
     gap: 15px;
     margin-bottom: 100px;
 
@@ -59,7 +59,7 @@ export const Portfolio = () => {
 
     return <>
     <h1>my <span>work</span></h1> 
-    <h3>interaction / dev</h3>
+    {/* <h3>interaction / dev</h3> */}
     <PortfolioGrid>
     {dev.map(function (portfolio, index) {
                     const { node } = portfolio
@@ -68,7 +68,7 @@ export const Portfolio = () => {
                     return <PortfolioPiece key={`dev_portfolio_${title}`} size ={size} slug={slug} title={title} tags={tags} previewImage={previewImage}/> 
                 })}
     </PortfolioGrid>
-
+{/* 
     <h3>visual / graphic</h3>
     <PortfolioGrid>
     {design.map(function (portfolio, index) {
@@ -77,7 +77,7 @@ export const Portfolio = () => {
                     const { title, tags, previewImage, size } = frontmatter; 
                     return <PortfolioPiece key={`design_portfolio_${title}`} size ={size} slug={slug} title={title} tags={tags} previewImage={previewImage}/> 
                 })}
-       </PortfolioGrid>
+       </PortfolioGrid> */}
 
 
     </>

@@ -54,6 +54,7 @@ const HorizontalFooter = styled.div`
 
 const PortfolioPage = ({location, children, pageContext}) => {
     const { title, subtitle, role, focus, result, resultLink, coverImage } = pageContext.frontmatter
+    const isLink = !(resultLink == "na")
     return (
       <Layout>
            <h1 style={{marginTop: '100px'}}>{title}</h1>
@@ -62,6 +63,7 @@ const PortfolioPage = ({location, children, pageContext}) => {
            <SummaryTable>
                <SummaryCell>
                    <h3>Role</h3>
+
                    <p>
                        {role}
                    </p>
@@ -75,7 +77,8 @@ const PortfolioPage = ({location, children, pageContext}) => {
                 <SummaryCell>
                 <h3>Result</h3>
                    <p>
-                     <a href={resultLink}>{result}</a>
+                       {isLink ? <a href={resultLink}>{result}</a> : result}
+                     
                    </p>
                 </SummaryCell>
            </SummaryTable>
