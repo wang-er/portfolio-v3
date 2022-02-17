@@ -11,6 +11,8 @@ export const PortfolioBlock = styled(Link)`
     flex-grow: ${props => (props.size ? props.size : 1)};
     background-image: ${props => (props.image ? `url("${props.image}")` : "none")};
     height: 240px;
+    background-size: cover;
+    background-position: center;
     position: relative;
     transition: all 0.2s;
     &:hover div{
