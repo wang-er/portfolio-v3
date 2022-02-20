@@ -13,6 +13,21 @@ export const Bepis = styled.img`
     margin: 20px 0px;
 `
 
+export const Bepis2 = styled.img`
+    display: flex;
+    width: 40%;
+    object-fit: contain;
+    margin: 20px 20px;
+`
+
+export const Bepis3 = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+`
+
 const CoverImage = styled.img`
     display: flex;
     width: 100%;

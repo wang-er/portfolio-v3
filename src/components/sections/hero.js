@@ -22,6 +22,6 @@ export const Hero = () => (
     <Center>
     <Erin/>
     <Title>Hi! I’m <span>Erin.</span></Title>
-    <h2>ux / ui / developer</h2> 
+    <h2>designer / developer</h2> 
     </Center>
 )
