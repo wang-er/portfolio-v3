@@ -6,7 +6,7 @@ import { graphql, useStaticQuery} from 'gatsby'
 
 const PortfolioGrid = styled.div`
     display: flex;
-    flex-flow: row-reverse wrap;
+    flex-flow: row wrap;
     gap: 15px;
     margin-bottom: 100px;
 
@@ -16,7 +16,7 @@ export const Portfolio = () => {
     const query = useStaticQuery(graphql`
     query {
       develop:allMdx (
-        filter: { fileAbsolutePath: { regex: "/dev/" } }
+        filter: { fileAbsolutePath: { regex: "/work/" } }
         sort: { fields: [frontmatter___order], order: ASC }
       ) {
         edges {

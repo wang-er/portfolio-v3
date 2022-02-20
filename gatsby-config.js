@@ -1,8 +1,7 @@
 module.exports = {
-  pathPrefix: "/portfolio-v3",
-  siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "portfolio-v3",
+    siteMetadata: {
+    siteUrl: "https://wang-er.github.io/",
+    title: "Erin's portfolio",
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -37,7 +36,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'dev',
-        path: `${__dirname}/content/dev/`,
+        path: `${__dirname}/content/work/`,
       },
     },
     {

@@ -23,7 +23,7 @@ export const Bepis2 = styled.img`
 export const Bepis3 = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 
 `
@@ -63,8 +63,6 @@ const HorizontalFooter = styled.div`
  height: 4px;
  background-color: ${erinRed};
  margin-top: 70px;
- margin-bottom: 150px;
-
 `
 
 const PortfolioPage = ({location, children, pageContext}) => {
@@ -101,6 +99,7 @@ const PortfolioPage = ({location, children, pageContext}) => {
             {children}
             </MarkdownStyle>
             <HorizontalFooter/>
+            <h3 style={{marginBottom: '150px', marginTop: '20px'}}><a href="/">← back</a></h3>
       </Layout>
     )
   }
