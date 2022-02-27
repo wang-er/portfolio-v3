@@ -6,18 +6,15 @@ focus: "Web Development, Brand Identity Design"
 result: a cool site here
 resultLink: "https://huntingtonangelsnetwork.com"
 order: 1
-previewImage: "https://cdn.discordapp.com/attachments/464251079102693409/943777263315480576/Frame_462.png"
-coverImage: "https://cdn.discordapp.com/attachments/464251079102693409/943777682724880384/HAN_project_banner.png"
+previewImage: ./../images/HAN/cover.png
+coverImage: ./../images/HAN/HAN_project_banner.png
 size: 100
 tags: ['Web Design', 'Brand Development']
 ---
 
 import { Link } from 'gatsby'
-import { Bepis } from '../../src/components/portfolio-page'
-import preworkUrl from '../../src/images/HAN/prework.png';
-import moodboardUrl from '../../src/images/HAN/moodboard.png';
-import wireframeUrl from '../../src/images/HAN/wireframe.png';
-import finalUrl from '../../src/images/HAN/final.png';
+import { SingleImage } from '../../src/components/portfolio-page'
+
 
 
 
@@ -32,25 +29,25 @@ Check out the live site here: [huntingtonangelsnetwork.com](https://huntingtonan
 ## pre-work analysis
 Prior to creating HAN’s new vision, my team members, clients, and I did a bunch of branding exercises and user research. We looked through their old website to find what worked and what didn’t. We asked ourselves what we envisioned the new brand would emote. We later created moodboards that showcased the different directions HAN could pursue.
 
-<Bepis src={preworkUrl}/>
+<SingleImage src='./../images/HAN/prework.png'/>
 
 
 We also began to create user stories and research some tech stack options, which not only aided us for future steps in development but also gave us a perspective of each of the stakeholder’s needs. For our tech stack, we ended up choosing Gatsby + Contentful + Styled Components due to their smaller user base and free to use setup.
 
 ## honing in on a design
 After receiving feedback from our moodboards, we created a design strategy as a pivoted and focused visual direction. While we created a clean, minimalistic look, we also wanted to include a sense of liveliness and bolder personality. We accomplished that through the pops of yellows & blues, the subtle use of italicized serifs, and geometric overlays.
-<Bepis src={moodboardUrl}/>
+<SingleImage src='./../images/HAN/moodboard.png'/>
 
 
 ## first steps of creating the site
 Instead of diving head first in redesigning HAN’s site, we knew that it was much more important making sure all our content was there, organized and easy to navigate. We charted a site map, drafted lo-fi wireframes, and prepared data structures as blueprints for our final round of design and development.
-<Bepis src={wireframeUrl}/>
+<SingleImage src='./../images/HAN/wireframe.png'/>
 
 
 ## combining two and two together
 Once we got confirmation that all the needed components were there on our lo-fis, we then combined them with the colors and visuals from our design strategy to create hi-fi wireframes. We created hi-fi screens for desktop, tablet, and mobile.
 As one of the two developers on our team, I was also tasked on creating the site. This meant installing our tech stack, implementing data structures on the CMS, populating data into the CMS, and ultimately coding the site up.
-<Bepis src={finalUrl}/>
+<SingleImage src='./../images/HAN/final.png'/>
 
 
 ## final notes

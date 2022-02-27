@@ -1,5 +1,5 @@
 import React from 'react'
-import { Erin } from '../../images/erin';
+import { Erin } from '../../../static/images/erin';
 import styled from "styled-components";
 
 

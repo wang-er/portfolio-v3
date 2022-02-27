@@ -6,17 +6,14 @@ focus: "Brand Development"
 result: a funny brand and name
 resultLink: na
 order: 2
-previewImage: "https://media.discordapp.net/attachments/464251079102693409/944936003934761030/just_a_plain_old_coffee_cup.png"
-coverImage: "https://media.discordapp.net/attachments/464251079102693409/944935900402552842/Desktop_-_9_1.png"
+previewImage: ./../images/mishap/a-plain-old-coffee-cup.png
+coverImage: ./../images/mishap/cover.png
 size: 60
 tags: ['Brand Design', 'Logo']
 ---
 
 import { Link } from 'gatsby'
-import { Bepis, Bepis2, Bepis3 } from '../../src/components/portfolio-page'
-import cup from '../../src/images/cup.png';
-import bag from '../../src/images/bag.png';
-import mishap from '../../src/images/mishap.png';
+import { SingleImage, MultiImage, MultiImageContainer } from '../../src/components/portfolio-page'
 
 
 
@@ -27,9 +24,9 @@ He asked be to create a fun brand – including the name! – for him when he 
 ## figuring out the name
 Names were inspired by puns, inside jokes (but also made sense towards a general customer), and the classy but basic ones.
 
-<Bepis3>
-<Bepis2 src={"https://media.discordapp.net/attachments/464251079102693409/944936960621953075/IMG_1496.JPG?width=878&height=1171"}/>
-</Bepis3>
+<MultiImageContainer>
+<MultiImage src='./../images/mishap/name-generation.jpeg'/>
+</MultiImageContainer>
 
 I mean, ideate and iterate until something sticks – right?
 
@@ -40,12 +37,12 @@ The Morning Mishap was perfect. Luis is a man of mistakes; Coffee can cause many
 ## what’s a brand without a logo?
 Cracks of cups and splashes of the joe slowly became the motif of this shop.
 
-<Bepis3>
-<Bepis2 src={"https://media.discordapp.net/attachments/464251079102693409/944936960722632755/IMG_1497.JPG?width=878&height=1171"}/>
-<Bepis2 src={mishap}/>
-</Bepis3>
+<MultiImageContainer>
+<MultiImage src='./../images/mishap/logos.jpeg'/>
+<MultiImage src='./../images/mishap/mishap.png'/>
+</MultiImageContainer>
 
 “The” was the hardest word to put in this logo. It’s weird to put it in the same importance as the other two words, but it also seems off-putting and distracting when making it small.
 
 ## fun brand items
-<Bepis src={"https://cdn.discordapp.com/attachments/464251079102693409/944941624125964338/Frame_463.png"}/>
+<SingleImage src='./../images/mishap/coffee-mockups.png'/>

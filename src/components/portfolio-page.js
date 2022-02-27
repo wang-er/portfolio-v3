@@ -7,20 +7,20 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { erinRed } from '../styles/colors'
 
 
-export const Bepis = styled.img`
+export const SingleImage = styled.img`
     display: flex;
     width: 100%;
     margin: 20px 0px;
 `
 
-export const Bepis2 = styled.img`
+export const MultiImage = styled.img`
     display: flex;
     width: 40%;
     object-fit: contain;
     margin: 20px 20px;
 `
 
-export const Bepis3 = styled.div`
+export const MultiImageContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
