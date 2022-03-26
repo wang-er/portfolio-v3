@@ -1,5 +1,5 @@
 import React from 'react'
-import { Erin } from '../../images/erin';
+import { Erin } from '../../../static/images/erin';
 import styled from "styled-components";
 
 
@@ -22,6 +22,6 @@ export const Hero = () => (
     <Center>
     <Erin/>
     <Title>Hi! I’m <span>Erin.</span></Title>
-    <h2>ux / ui / developer</h2> 
+    <h2>I love to make stuff!</h2> 
     </Center>
 )

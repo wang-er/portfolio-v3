@@ -33,9 +33,9 @@ export const About = () => (
             </p>
             <p>I am a creator, even outside of work. I love being able to create something new and wonderful.
                 I’ve had a hand at sewing, crocheting, cake decorating, and using resin.</p>
-            <p>
-                <a href="">LOL</a> / <a href="">LOL</a> / <a href="">LOL</a> 
-            </p>
+            {/* <p>
+                <a href="">LinkedIn</a> / <a href="">Resume</a>
+            </p> */}
 
         </AboutText>
     </AboutGrid>

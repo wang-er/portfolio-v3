@@ -2,12 +2,15 @@ import React from 'react'
 import { animated, useTransition } from 'react-spring'
 import styled from "styled-components";
 import { erinBlack, erinBlack10, erinRed, erinRoseGold10, erinWhite } from '../../styles/colors';
+import { graphql, useStaticQuery} from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const WorkGrid = styled.div`
     margin-top: 1.5em;
     margin-bottom: 5em;
     display: flex;
     position: relative;
+    min-height: 500px;
 `
 
 const SidebarItem = styled.div`
@@ -29,7 +32,9 @@ const SidebarItem = styled.div`
 const SidebarColumn = styled.div`
     display: flex;
     flex-direction: column;
-    flex-basis: 20%;
+    min-width: 25%;
+    flex-grow: 1;
+    white-space: nowrap;
     gap: 15px;
     border-left: 4px solid ${erinBlack10};
     height: fit-content;
@@ -51,9 +56,9 @@ const SidebarHighlight = styled.div`
 
 
 const JobBlock = styled(animated.div)`
-    display: ${props => (props.hidden ? 'none': 'flex')};
+    display: flex;
     flex-direction: column;
-    flex-basis: auto;
+    width: 75%;
     margin-left: 30px;
 
    small {
@@ -65,25 +70,44 @@ const JobBlock = styled(animated.div)`
    }
 `
 
-const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, hidden, props }) => {
-    return <JobBlock style={props} hidden={hidden}>
+const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, props }) => {
+    return <JobBlock style={props}>
         <h3>{role} at <a href={companyURL}>{companyName}</a></h3>
         <small>{startDate} – {endDate}</small>
-        <ul>
-            {bullets.map(function (bullet, index) {
-                return <li key={`${role}_${startDate}_bullet_${index}`}>{bullet}</li>;
-            })}
-        </ul>
+        <MDXRenderer>{bullets}</MDXRenderer>
     </JobBlock>
 }
 
-export const Work = ({ jobs }) => {
-    const [currentJobIndex, setCurrentJobIndex] = React.useState(0);
+export const Work = () => {
+    const jobsQuery = useStaticQuery(graphql`
+    query {
+      allMdx (
+        filter: { fileAbsolutePath: { regex: "/jobs/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            body
+            frontmatter {
+              role
+              company
+              url
+              startDate
+              endDate
+            }
+          }
+        }
+      }
+    }
+  `);
 
+  const jobs = jobsQuery.allMdx.edges;
+
+    const [currentJobIndex, setCurrentJobIndex] = React.useState(0);
     const transitions = useTransition(jobs[currentJobIndex], {
-        from: { opacity: 0, transform: 'translate3d(0,5%, 0)', position: 'absolute'},
-        enter: { opacity: 1, transform: 'translate3d(0,0%, 0)' },
-        leave: { opacity: 0,  transform: 'translate3d(0, -5%, 0)'},
+        from: { opacity: 0, transform: 'translate3d(0, 5%, 0)', display: 'flex'},
+        enter: { opacity: 1, transform: 'translate3d(0, 0%, 0)'},
+        leave: { opacity: 0,  transform: 'translate3d(0, -5%, 0)', display: 'none'},
       });
 
     return <>
@@ -92,21 +116,20 @@ export const Work = ({ jobs }) => {
             <SidebarColumn>
                 {/* For each job, create a bar here, on click method updates index # */}
                 {jobs.map(function (job, index) {
-                    return <SidebarItem key={index} isActive={index == currentJobIndex} onClick={() => setCurrentJobIndex(index)}>  {/* onClick method */}
-                        <p>{`job.role ${index}`}</p>
+                    const company = job.node.frontmatter.company
+                    return <SidebarItem key={`sidebar_${company}_${index}`} isActive={index === currentJobIndex} onClick={() => setCurrentJobIndex(index)}>  {/* onClick method */}
+                        <p>{company}</p>
                     </SidebarItem>
                 })}
             <SidebarHighlight position={currentJobIndex}/>
             </SidebarColumn>
-
-                <div>
-                {transitions((props, item, key) => (
-                <JobDescription hidden={(item - 1) !== currentJobIndex} props={props} role={`HCI Engineer ${item}`} companyName="MORSE Corp." companyURL="https://google.com" startDate="June 2020" endDate="Present"
-                     bullets={["Assist in designing and programming the architecture for multiple Android aerospace applications with a MVVM pattern",
-                         "Create and implement pixel perfect mockups for Android applications",
-                         "Perform design reviews with clients and key users from the Department of Defense"]} />
-                ))}
-                </div>
+                {transitions(function (props, item, key, index) {
+                    const { node } = item
+                    const { frontmatter, body } = node;
+                    const { role, url, company, startDate, endDate } = frontmatter;         
+                    return <JobDescription key={`job_${company}_${jobs.indexOf(item)}`} props={props} role={role} companyName={company} companyURL={url} startDate={startDate} endDate={endDate}
+                            bullets={body} />
+                        })}
         </WorkGrid>
     </>
 }

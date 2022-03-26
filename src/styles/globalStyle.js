@@ -4,6 +4,9 @@ import { erinBlack, erinRed, erinRose, erinWhite } from "./colors"
 import Cabin from '../../static/fonts/Cabin/Cabin-Regular.ttf';
 import CabinItalic from '../../static/fonts/Cabin/Cabin-Italic.ttf';
 
+import Atkinson from '../../static/fonts/Hyperlegible/Atkinson-Hyperlegible-Regular-102.ttf';
+import AtkinsonItalic from '../../static/fonts/Hyperlegible/Atkinson-Hyperlegible-Italic-102.ttf';
+
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
