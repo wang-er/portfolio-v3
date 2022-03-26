@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---content-work-huntington-angels-mdx",
     "path": "/work/huntington-angels/",
-    "result": {"pageContext":{"frontmatter":{"title":"Huntington Angels Network","subtitle":"a brand refresh for a venture capital organization at Northeastern University","role":"Developer, Designer","focus":"Web Development, Brand Identity Design","result":"a cool site here","resultLink":"https://huntingtonangelsnetwork.com","order":1,"previewImage":"https://cdn.discordapp.com/attachments/464251079102693409/943777263315480576/Frame_462.png","coverImage":"https://cdn.discordapp.com/attachments/464251079102693409/943777682724880384/HAN_project_banner.png","size":100,"tags":["Web Design","Brand Development"]}}},
+    "result": {"pageContext":{"frontmatter":{"title":"Huntington Angels Network","subtitle":"a brand refresh for a venture capital organization at Northeastern University","role":"Developer, Designer","focus":"Web Development, Brand Identity Design","result":"a cool site here","resultLink":"https://huntingtonangelsnetwork.com","order":1,"previewImage":"./../images/HAN/cover.png","coverImage":"./../images/HAN/HAN_project_banner.png","size":100,"tags":["Web Design","Brand Development"]}}},
     "staticQueryHashes": []}
