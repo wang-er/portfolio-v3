@@ -32,6 +32,12 @@ const SidebarItem = styled.div`
     &:hover {
         background-color: ${erinRoseGold10};
     }
+
+    @media ${device.mobile} {
+        min-width: 130px;
+        justify-content: center;
+        border-bottom: 4px solid ${erinBlack10};
+    }
 `
 
 const SidebarColumn = styled.div`
@@ -47,6 +53,12 @@ const SidebarColumn = styled.div`
 
     @media ${device.mobile} {
         flex-flow: row nowrap;
+        flex-grow: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 20px;
+        gap: 0px;
+        border-left: none;
     }
 `
 
@@ -63,11 +75,14 @@ const SidebarHighlight = styled.div`
     transition-delay: 0.1s;
 
     @media ${device.mobile} {
-        top: 0;
-        left: 0px;
-        width: 0px;
-        height: 0px;
-    }
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 160px;
+        height: 4px;
+        transform: translateX(calc(${({ position }) => position} * (130px + 30px)));
+      }
 `
 
 
