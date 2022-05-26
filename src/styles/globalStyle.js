@@ -6,6 +6,7 @@ import CabinItalic from '../../static/fonts/Cabin/Cabin-Italic.ttf';
 
 import Atkinson from '../../static/fonts/Hyperlegible/Atkinson-Hyperlegible-Regular-102.ttf';
 import AtkinsonItalic from '../../static/fonts/Hyperlegible/Atkinson-Hyperlegible-Italic-102.ttf';
+import { device } from "./devices";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -56,21 +57,33 @@ body {
     font-size: 60px;
     margin-bottom: 16px;
 
+    @media ${device.mobile} {
+      font-size: 42px;
+    }
   }
 
   h2 {
     font-size: 40px;
+
+    @media ${device.mobile} {
+      font-size: 25px;
+      letter-spacing: 1px;
+    }
   }
 
   h3 {
     font-size: 32px;
     margin-bottom: 8px;
     letter-spacing: 1px; 
-
+    
     a {
       ::after {
         height: 3px;
       }
+    }
+
+    @media ${device.mobile} {
+      font-size: 22px;
     }
   }
 
@@ -81,7 +94,10 @@ body {
 
     a::after {
       height: 0.1em;
-      
+    }
+
+    @media ${device.mobile} {
+      font-size: 18px;
     }
   }
 
@@ -123,6 +139,10 @@ body {
     font-style: italic;
     letter-spacing: 1px;
     color: ${erinRose};
+
+    @media ${device.mobile} {
+      font-size: 18px;
+    }
   }
 `
 export default GlobalStyle

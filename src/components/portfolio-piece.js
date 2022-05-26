@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react'
 import styled from "styled-components";
 import { erinRed, erinBlack, erinWhite } from '../styles/colors';
+import { device } from '../styles/devices';
 import { Tag } from '../styles/globalStyle';
 
 export const PortfolioBlock = styled(Link)`
@@ -24,6 +25,11 @@ export const PortfolioBlock = styled(Link)`
 
     ::after {
         height: 0;
+    }
+
+    @media ${device.mobile} {
+        flex-basis: 100%;
+        height: 180px;
     }
 `
 

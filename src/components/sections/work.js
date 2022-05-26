@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { erinBlack, erinBlack10, erinRed, erinRoseGold10, erinWhite } from '../../styles/colors';
 import { graphql, useStaticQuery} from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { device } from '../../styles/devices';
 
 const WorkGrid = styled.div`
     margin-top: 1.5em;
@@ -11,6 +12,10 @@ const WorkGrid = styled.div`
     display: flex;
     position: relative;
     min-height: 500px;
+
+    @media ${device.mobile} {
+        flex-flow: column nowrap;
+    }
 `
 
 const SidebarItem = styled.div`
@@ -27,6 +32,12 @@ const SidebarItem = styled.div`
     &:hover {
         background-color: ${erinRoseGold10};
     }
+
+    @media ${device.mobile} {
+        min-width: 130px;
+        justify-content: center;
+        border-bottom: 4px solid ${erinBlack10};
+    }
 `
 
 const SidebarColumn = styled.div`
@@ -39,6 +50,16 @@ const SidebarColumn = styled.div`
     border-left: 4px solid ${erinBlack10};
     height: fit-content;
     position: relative;
+
+    @media ${device.mobile} {
+        flex-flow: row nowrap;
+        flex-grow: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 20px;
+        gap: 0px;
+        border-left: none;
+    }
 `
 
 //TODO remember to change height
@@ -52,6 +73,16 @@ const SidebarHighlight = styled.div`
     transform: translateY(calc(${({ position }) => position} * (57px + 15px)));
     transition: transform 0.25s ease-in-out;
     transition-delay: 0.1s;
+
+    @media ${device.mobile} {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 160px;
+        height: 4px;
+        transform: translateX(calc(${({ position }) => position} * (130px + 30px)));
+      }
 `
 
 
