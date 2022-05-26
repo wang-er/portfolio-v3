@@ -92,13 +92,22 @@ const JobBlock = styled(animated.div)`
     width: 75%;
     margin-left: 30px;
 
-   small {
-       color: ${erinBlack};
-   }
+    small {
+        color: ${erinBlack};
+    }
 
-   a {
-       font-weight: 400;
-   }
+    a {
+        font-weight: 400;
+    }   
+
+    @media ${device.mobile} {
+        width: 100%;
+        margin-left: 10px;
+
+        ul {
+             padding-inline-start: 20px;
+        }
+    }
 `
 
 const JobDescription = ({ role, companyName, companyURL, startDate, endDate, bullets, props }) => {
