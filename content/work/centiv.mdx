@@ -6,15 +6,14 @@ focus: "Mobile Development, UX Research"
 result: a prototype web app
 resultLink: "https://centiv.netlify.app/"
 order: 4
-previewImage: ./../images/centiv/Centiv-Loop.gif
-coverImage: ./../images/centiv/centiv_banner.png
+previewImage: '../../images/centiv/Centiv-Loop.gif'
+coverImage: '../../images/centiv/centiv_banner.png'
 size: 40
 tags: ['Mobile', 'UX Research']
 ---
 
 import { Link } from 'gatsby'
-
-
+import { SingleImage, MultiImage, MultiImageContainer } from '../../src/components/portfolio-page'
 
 ## the problem
 When the COVID-19 pandemic started, many people picked up old hobbies or even started new ones to help them cope with isolation and serve as a distraction.
@@ -23,9 +22,31 @@ Our goal was to find a way to encourage people to enjoy and continue these hobbi
 However, how does motivate oneself during these hard times? In the ideal world we'd work towards something intrinsically. However, most people needed more than that...
 
 ## our solution
-Enter Centiv, a motivational goal based app that enables users to wager a specific amount of money towards custom goals to reward themselves down the line. The user will put in a set amount of money, and only after completing the goal would they get their money back.
+For my senior capstone project, I helped developed Centiv, a motivational goal based app that enables users to wager a specific amount of money towards custom goals to reward themselves down the line. The user will put in a set amount of money, and only after completing the goal would they get their money back.
 The money doesn't expire though! There's always a chance for the user to finish their goal and earn their money back.
 
 The app itself is designed as a board game-esque fashion, where users start on square one and progressively climb their way up the path until reaching their goal. Each spot represents a documented entry of their goal, and they can view their past record of documentation by clicking on previous spots they were on.
 
-## Work in progress...
+I worked with two UX designers and one other developer to get this prototype out.
+
+## the deliverables 
+
+<video width="100%" height="500" controls>
+  <source src="../../images/centiv/centiv.mp4" type="video/mp4"/>
+</video>
+
+Check out the live prototype [here](https://centiv.netlify.app/) or read through our full design process [here](https://uxfol.io/project/0359a92f/Centiv). 
+(Or if you're extra curious, visit the repository [here!](https://github.com/wang-er/interaction-team-degree-capstone))
+
+## a quick overview of research
+For this capstone, we read 100 different research papers, interviewed 12 key audience members and experts – focusing on topics
+about motivation, social media, gamification, and habit formation. We also did design activities such as bibliography card designs, personas, and card sorting to summarize our initial findings.
+
+From there we created journey maps and low fidelity wireframes to test with our users. We also developed a design system and high fidelity wireframes before going into actual development.
+<MultiImageContainer>
+    <MultiImage src='../../images/centiv/centiv_components.png'/>
+    <MultiImage src='../../images/centiv/centiv_typography.png'/>
+</MultiImageContainer>
+
+## the tech stack
+The prototype we developed uses React.js for our logic on our project, Styled Components for implementing visuals from our hi fidelity designs, and Firebase for our backend database to store information on users, goals, and their entries.
