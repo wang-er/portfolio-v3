@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---content-work-layers-upon-layers-mdx",
     "path": "/work/layers-upon-layers/",
-    "result": {"pageContext":{"frontmatter":{"title":"Layers Upon Layers","subtitle":"An infographic story representing three different trips","role":"Designer","focus":"Infographic, Visual Design","result":"a cool poster","resultLink":"na","order":5,"previewImage":"./../images/layers/layers_preview.png","coverImage":"./../images/layers/layers_preview.png","size":40,"tags":["Infographic","Visual Design"]}}},
+    "result": {"pageContext":{"frontmatter":{"title":"Layers Upon Layers","subtitle":"An infographic story representing three different trips","role":"Designer","focus":"Infographic, Visual Design","result":"a cool poster","resultLink":"na","order":5,"previewImage":"../../images/layers/layers_preview.png","coverImage":"../../images/layers/layers_preview.png","size":40,"tags":["Infographic","Visual Design"]}}},
     "staticQueryHashes": []}

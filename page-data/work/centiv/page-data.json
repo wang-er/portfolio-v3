@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---content-work-centiv-mdx",
     "path": "/work/centiv/",
-    "result": {"pageContext":{"frontmatter":{"title":"Centiv","subtitle":"a motivational money wagering app","role":"Developer, Designer","focus":"Mobile Development, UX Research","result":"a prototype web app","resultLink":"https://centiv.netlify.app/","order":4,"previewImage":"./../images/centiv/Centiv-Loop.gif","coverImage":"./../images/centiv/centiv_banner.png","size":40,"tags":["Mobile","UX Research"]}}},
+    "result": {"pageContext":{"frontmatter":{"title":"Centiv","subtitle":"a motivational money wagering app","role":"Developer, Designer","focus":"Mobile Development, UX Research","result":"a prototype web app","resultLink":"https://centiv.netlify.app/","order":4,"previewImage":"../../images/centiv/Centiv-Loop.gif","coverImage":"../../images/centiv/centiv_banner.png","size":40,"tags":["Mobile","UX Research"]}}},
     "staticQueryHashes": []}

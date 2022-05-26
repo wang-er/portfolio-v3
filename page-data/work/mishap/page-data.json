@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---content-work-mishap-mdx",
     "path": "/work/mishap/",
-    "result": {"pageContext":{"frontmatter":{"title":"The Morning Mishap","subtitle":"for a friend's dream coffee shop.","role":"Designer","focus":"Brand Development","result":"a funny brand and name","resultLink":"na","order":2,"previewImage":"./../images/mishap/a-plain-old-coffee-cup.png","coverImage":"./../images/mishap/cover.png","size":60,"tags":["Brand Design","Logo"]}}},
+    "result": {"pageContext":{"frontmatter":{"title":"The Morning Mishap","subtitle":"for a friend's dream coffee shop.","role":"Designer","focus":"Brand Development","result":"a funny brand and name","resultLink":"na","order":2,"previewImage":"../../images/mishap/a-plain-old-coffee-cup.png","coverImage":"../../images/mishap/cover.png","size":60,"tags":["Brand Design","Logo"]}}},
     "staticQueryHashes": []}
